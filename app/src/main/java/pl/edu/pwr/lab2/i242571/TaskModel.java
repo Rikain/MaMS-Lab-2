@@ -1,54 +1,62 @@
 package pl.edu.pwr.lab2.i242571;
 
-import android.icu.text.SimpleDateFormat;
-import android.os.Build;
-
-import java.text.DateFormat;
-import java.util.Date;
-
 public class TaskModel {
-    TaskModel(int id, String title, int type, String description, String dueDate, int status){
-        this.id = id;
+    TaskModel(String title, int type, String description, String dueDate){
         this.title = title;
         this.type = type;
         this.description = description;
-        this.status = status;
+        this.status = Status.pending;
         this.dueDate = dueDate;
     }
     TaskModel(){}
 
+    public static final String dateFormat = "dd/mm/yyyy";
 
     public static class TaskType{
         public static final int todo = 0;
         public static final int email = 1;
         public static final int phone = 2;
         public static final int meeting = 3;
+
+        public static int typeToImage(int status){
+            switch (status){
+                case email:
+                    return R.drawable.ic_email;
+                case phone:
+                    return R.drawable.ic_phone;
+                case meeting:
+                    return R.drawable.ic_meeting;
+                case todo:
+                default:
+                    return R.drawable.ic_to_do;
+            }
+        }
     }
 
     public static class Status{
         public static final int pending = 0;
         public static final int done = 1;
+
+        public static int statusToImage(int status){
+            if(status == TaskModel.Status.done){
+                return R.drawable.ic_status_done;
+            }else{
+                return R.drawable.ic_status_pending;
+            }
+        }
     }
 
+    private long id;
     private int status;
-    private int id;
     private String title, description;
     private int type;
     private String dueDate;
 
-    public static String getCurrentDate(){
-        String date = "";
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            date = new SimpleDateFormat("dd/mm/yyyy").format(new Date());
-        }
-        return date;
-    }
-
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

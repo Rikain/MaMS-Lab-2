@@ -1,3 +1,17 @@
 <resources>
+    <string name="add">Add</string>
     <string name="app_name">Lab 2</string>
+    <string name="add_tv">Add new task:</string>
+    <string name="show_tv">Task details:</string>
+    <string name="add_title_tv">Title:</string>
+    <string name="add_type_tv">Type:</string>
+    <string name="add_description_tv">Description:</string>
+    <string name="add_due_date_tv">Due date:</string>
+    <string name="add_btn">Add</string>
+    <string name="add_date_btn">Choose date</string>
+    <string name="show_date_tv"></string>
+    <string name="todo">To do</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="meeting">Meeting</string>
 </resources>

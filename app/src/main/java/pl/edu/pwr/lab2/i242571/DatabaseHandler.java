@@ -22,7 +22,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String TYPE = "type";
     private static final String DATE = "dueDate";
     private static final String CREATE_TODO_TABLE = "CREATE TABLE " + TODO_TABLE + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + TITLE + " TEXT, "
-            + DESCRIPTION + " TEXT, " + TYPE + " INTEGER, " + STATUS + " INTEGER)";
+            + DESCRIPTION + " TEXT, " + DATE + " TEXT, " + TYPE + " INTEGER, " + STATUS + " INTEGER)";
 
     private SQLiteDatabase db;
 
@@ -45,14 +45,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db = this.getWritableDatabase();
     }
 
-    public void insertTask(TaskModel task) {
+    public long insertTask(TaskModel task) {
         ContentValues cv = new ContentValues();
         cv.put(TITLE, task.getTitle());
         cv.put(DESCRIPTION, task.getDescription());
         cv.put(TYPE, task.getType());
         cv.put(STATUS, task.getStatus());
         cv.put(DATE, task.getDueDate());
-        db.insert(TODO_TABLE, null, cv);
+        return db.insert(TODO_TABLE, null, cv);
     }
 
     public List<TaskModel> getAllTasks() {
@@ -84,13 +84,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         return taskList;
     }
 
-    public void updateStatus(int id, int status) {
+    public void updateStatus(long id, int status) {
         ContentValues cv = new ContentValues();
         cv.put(STATUS, status);
         db.update(TODO_TABLE, cv, ID + "= ?", new String[]{String.valueOf(id)});
     }
 
-    public void deleteTask(int id) {
+    public void deleteTask(long id) {
         db.delete(TODO_TABLE, ID + "= ?", new String[]{String.valueOf(id)});
     }
 }

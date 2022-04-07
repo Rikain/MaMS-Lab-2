@@ -1,2 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <dimen name="space_small">10dp</dimen>
+    <dimen name="space_large">20dp</dimen>
+    <dimen name="input_tv">50dp</dimen>
+    <dimen name="tv_size">24sp</dimen>
+    <dimen name="add_new_task_size">20sp</dimen>
+    <dimen name="info_text_size">30sp</dimen>
+    <dimen name="tv_size_txt">50sp</dimen>
+    <dimen name="tv_size_attributes">20sp</dimen>
+</resources>

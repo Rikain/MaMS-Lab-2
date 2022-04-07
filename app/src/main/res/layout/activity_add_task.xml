@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTaskActivity">
+
+    <TextView
+        android:id="@+id/add_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/add_new_task_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/space_small"
+        android:layout_marginTop="@dimen/space_large"
+        android:layout_marginEnd="@dimen/space_small"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_title_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mass_tv4" />
+
+        <EditText
+            android:id="@+id/title_et"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/input_tv"
+            android:ems="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+
+        <TextView
+            android:id="@+id/type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_type_tv"
+            app:layout_constraintTop_toBottomOf="@+id/title_et"
+            tools:layout_editor_absoluteX="0dp" />
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/radio_todo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_to_do" />
+            <RadioButton
+                android:id="@+id/radio_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_email" />
+            <RadioButton android:id="@+id/radio_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_phone" />
+            <RadioButton android:id="@+id/radio_meeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_meeting" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/dueDate_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_due_date_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/desc_et" />
+
+        <TextView
+            android:id="@+id/show_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show_date_tv"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/date_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_date_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toEndOf="@+id/show_date_tv"
+            app:layout_constraintTop_toBottomOf="@+id/desc_et" />
+
+        <TextView
+            android:id="@+id/desc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_description_tv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/type_rg" />
+
+        <EditText
+            android:id="@+id/desc_et"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/input_tv"
+            android:ems="10"
+            app:layout_constraintTop_toBottomOf="@+id/desc_tv"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_button"
+            tools:layout_editor_absoluteX="44dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
