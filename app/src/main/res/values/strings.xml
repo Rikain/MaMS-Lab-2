@@ -4,6 +4,7 @@
     <string name="add_tv">Add new task:</string>
     <string name="show_tv">Task details:</string>
     <string name="add_title_tv">Title:</string>
+    <string name="add_status_tv">Status:</string>
     <string name="add_type_tv">Type:</string>
     <string name="add_description_tv">Description:</string>
     <string name="add_due_date_tv">Due date:</string>
@@ -14,4 +15,6 @@
     <string name="phone">Phone</string>
     <string name="email">Email</string>
     <string name="meeting">Meeting</string>
+    <string name="status_done">Done</string>
+    <string name="status_pending">Pending</string>
 </resources>

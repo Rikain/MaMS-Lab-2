@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity { //implements OnItemClickLi
     public static final String TypeMessage = "pl.edu.pwr.lab1.i242571.TYPE_MESSAGE";
     public static final String DescMessage = "pl.edu.pwr.lab1.i242571.DESC_MESSAGE";
     public static final String DateMessage = "pl.edu.pwr.lab1.i242571.DATE_MESSAGE";
+    public static final String StatusMessage = "pl.edu.pwr.lab1.i242571.STATUS_MESSAGE";
 
     public static final int AddTaskActivityRequestCode = 15;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity { //implements OnItemClickLi
             intent.putExtra(MainActivity.TileMessage, task.getTitle());
             intent.putExtra(MainActivity.TypeMessage, task.getType());
             intent.putExtra(MainActivity.DescMessage, task.getDescription());
+            intent.putExtra(MainActivity.StatusMessage, task.getStatus());
             startActivity(intent);
         }
     }
